@@ -3,9 +3,9 @@ var config = {
   password : "root", // leave this blank for windows machines
   port: 8889,
   host: "localhost",
-  database: "cooperStuff",
+  database: "cooper_db",
 
-  kidsmode : true
+  cms : true
 }
 
 module.exports = config;

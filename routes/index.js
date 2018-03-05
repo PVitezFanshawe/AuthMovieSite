@@ -17,3 +17,12 @@ router.get('/', function(req, res, next) {
 });
 
 module.exports = router;
+
+router.get('/cms', (req, res)=>{
+  console.log('hit the cms route');
+  res.render('cmsForm',{
+    mainpage: false,
+    cms : true
+  });
+
+});
