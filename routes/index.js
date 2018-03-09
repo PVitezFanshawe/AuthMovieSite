@@ -1,28 +1,29 @@
 var express = require('express');
 var router = express.Router();
 var config = require('../config');
+var connect = require('../utils/sqlConnect');
 
 // do some checking here => check the default user profile
 // ternary statement => MDN ternary
 var toRender = (config.kidsmode) ? 'main_kids' : 'home';
+router.get('/', (req, res, next) => {
+  connect.query('SELECT * FROM tbl_movies', (err, result) => {
+    if (err) {
+      throw err; console.log(err);
+    } else {
+      console.log(result);
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render(toRender, {
-    title: 'Done yet?',
-    message : "handlebars is awesome",
-    mainpage : true,
-    kidsmode : config.kidsmode
+      res.render(toRender, {
+        title: 'NN: Not Netflix!',
+        message : "Welcome to NotNetflix!",
+        movieData: result,
+        mainpage : true,
+        kidsmode : config.kidsmode
+      });
+    }
   });
 });
+/* GET home page. */
+
 
 module.exports = router;
-
-router.get('/cms', (req, res)=>{
-  console.log('hit the cms route');
-  res.render('cmsForm',{
-    mainpage: false,
-    cms : true
-  });
-
-});
