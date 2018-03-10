@@ -24,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // import all of your routes
 app.use('/', require('./routes/index'));
 app.use('/api', require('./routes/api'));
+app.use('/movie', require('./routes/onemovie'));
 
 
 // catch 404 and forward to error handler

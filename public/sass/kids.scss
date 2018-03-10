@@ -1,0 +1,47 @@
+$headerfont: 'Open Sans', sans-serif;
+$bodyfont: 'Coming Soon', cursive;
+
+
+body {
+  padding: 50px;
+  font-family: $bodyfont;
+}
+
+a {
+  color: #00B7FF;
+  }
+
+h1, h2, h3, h4, h5, h6{
+  font-family: $headerfont;
+}
+h1{
+  font-size: 2.5em;
+}
+h2{
+  font-size: 1.75em;
+}
+.container{
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  list-style: none;
+}
+.movieSingle{
+  width: 100%;
+  img{
+    width: 200px;
+  }
+}
+
+.containerSingle{
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: minmax(200px, 3fr) minmax(500px, 4fr);
+  list-style: none;
+}
+.trailer{
+  grid-column: 2;
+  video{
+    width: 100%;
+  }
+}

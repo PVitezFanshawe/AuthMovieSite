@@ -1,0 +1,17 @@
+<a href="/">
+  <i class="fa-fa-home"></i>
+</a>
+
+<ul class="containerSingle">
+  {{#each movieData}}
+    <li class="movieSingle">
+      <h2>{{ movies_title }}</h2>
+      <img src="../images/{{movies_cover}}" alt="{{ movies_title }}">
+      <p>{{ movies_year }}</p>
+    </li>
+    <li class="trailer">
+      <video controls src="../videos/{{movies_trailer}}"></video>
+    </li>
+  {{/each}}
+
+</ul>

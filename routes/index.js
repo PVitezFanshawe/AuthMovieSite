@@ -18,7 +18,8 @@ router.get('/', (req, res, next) => {
         message : "Welcome to NotNetflix!",
         movieData: result,
         mainpage : true,
-        kidsmode : config.kidsmode
+        kidsmode : config.kidsmode,
+        regstyle: true
       });
     }
   });

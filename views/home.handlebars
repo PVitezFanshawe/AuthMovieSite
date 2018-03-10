@@ -1,12 +1,20 @@
 <h1>{{ message }}</h1>
 <h2>We have 10 movies right now! Wow!</h2>
+ <button onclick="togglekidsmode()">Click me</button> 
+ <script>
+function togglekidsmode() {
+   config.kidsmode.bool = !bool;
+
+}
+</script
   <ul class="container">
     {{#each movieData}}
       <li class="movieSingle">
         <img src="images/{{movies_cover}}" alt="{{movies_title}}">
         <h3>{{ movies_title }}</h3>
         <p>{{ movies_storyline }}</p>
-        <p>{{ movies_year }}</p>
+        <h5>Year Released: {{ movies_year }}</h5>
+        <a href="/movie/{{ movies_id }}">Watch a Trailer!</a>
       </li>
     {{/each}}
   </ul>
